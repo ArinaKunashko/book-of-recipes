@@ -6,9 +6,9 @@ Described components using hooks (onMounted);\
 I used the VueX library to create a Store;\
 Used Vue Router for routing;\
 For styles used Vuetify;\
-The data is taken from the api - https://www.themealdb.com/api.php;\
 For reactive LocalStorage, VueUse was used;\
 JEST and Supertest were used for the tests;\
+The data is taken from the api - https://www.themealdb.com/api.php;
 
 ## Features
 On the home page of the application, you will be offered random dishes;\
