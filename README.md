@@ -20,8 +20,10 @@ You can also add a dish to your Favorites and go to the Favorites section of the
 
 
 ## How to run
-git clone https://github.com/ArinaKunashko/book-of-recipes.git;\
-cd book-of-recipes\
-npm install\
-npm run\
-And go to  http://localhost:5173/\
+```
+git clone https://github.com/ArinaKunashko/book-of-recipes.git
+cd book-of-recipes
+npm install
+npm run
+And go to  http://localhost:5173/
+```
