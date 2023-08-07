@@ -23,7 +23,9 @@ export function searchMealsByIngredient({ commit }, ing) {
     })
 }
 
-export function searchRandomMeals({ commit }) {
+export function searchRandomMeals({ commit, state }) {
+  const listRandomMeals = JSON.parse(JSON.stringify(state.randomMeals)).length
+  if(listRandomMeals) return
   getRandomMelas()
   .then(function(values) {
     const mDataAll = [].concat(values[0].data.meals, values[1].data.meals, values[2].data.meals, values[3].data.meals, values[4].data.meals, values[5].data.meals, values[6].data.meals, values[7].data.meals, values[8].data.meals, values[9].data.meals)
@@ -48,7 +50,7 @@ function getRandomMelas() {
 }
 
 
-export function searchFavoritesMeals({ commit }, ing) {
+export function searchFavoritesMeals({ commit }) {
   const favoriteMealsIds = useStorage('favoriteMeals', [])
   getFavoritesMeals(favoriteMealsIds.value)
   .then(function(values) {
@@ -57,10 +59,13 @@ export function searchFavoritesMeals({ commit }, ing) {
 }
 
 function getFavoritesMeals(ids) {
-  const ps = []
+  const favorites = []
   for (const mealId of ids) {
-    const axRes = axiosClient.get(`lookup.php?i=${mealId}`)
-    ps.push(axRes)
+    const axiosResponse = axiosClient.get(`lookup.php?i=${mealId}`)
+    favorites.push(axiosResponse)
   }
-  return Promise.all(ps);
+  return Promise.all(favorites);
 }
+
+
+

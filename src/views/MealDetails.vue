@@ -34,7 +34,7 @@
                             </v-card-text>
                             <v-card-actions class="d-flex justify-start">
                                 <YoutubeButton :href="meal.strYoutube" />
-                                <a :href="meal.strSource" :target="_blank">
+                                <a :href="meal.strSource" target="_blank">
                                     <v-btn variant="outlined" class="ma-3">
                                         View Source
                                     </v-btn>

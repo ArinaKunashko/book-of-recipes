@@ -1,5 +1,5 @@
 <template>
-    <a :href="href" :target="_blank">
+    <a :href="href" target="_blank">
         <v-btn variant="outlined">
             YouTube
         </v-btn>

@@ -1,19 +1,18 @@
 <template>
     <div>
-        <Meals :meals="meals" />
+        <MealsList :meals="meals" />
     </div>
 </template>
 
 <script setup>
 import { computed, onMounted, ref } from "vue";
 import store from "../store";
-import Meals from "./Meals.vue";
+import MealsList from "./MealsList.vue";
 
 const meals = computed(() => store.state.randomMeals);
+store.dispatch("searchRandomMeals")
 
-onMounted(() => {
-    store.dispatch("searchRandomMeals")
-})
+
 
 </script>
 

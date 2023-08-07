@@ -18,7 +18,7 @@
                 reccomend</p>
             <RandomMeals :meals="meals" />
         </v-row>
-        <Meals :meals="meals" @addToFavorites="addToFavorites" />
+        <MealsList :meals="meals" @addToFavorites="addToFavorites" />
     </div>
 </template>
 
@@ -27,7 +27,7 @@ import { computed } from "@vue/reactivity";
 import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import store from "../store";
-import Meals from "../components/Meals.vue";
+import MealsList from "../components/MealsList.vue";
 import RandomMeals from '../components/RandomMeals.vue';
 
 

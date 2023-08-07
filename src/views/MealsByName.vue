@@ -4,7 +4,7 @@
     </div>
     <v-text-field label="Search for Meals" variant="solo" @change="searchMeals" v-model.trim="keyword" class="ma-10 mb-0">
     </v-text-field>
-    <Meals :meals="meals" />
+    <MealsList :meals="meals" />
     <v-row class="d-flex flex-row align-center justify-center ma-10" v-if="!meals.length && !keyword">
         <p class="text-h7 text-md-h6 text-lg-h5 d-flex flex-wrap justify-center ma-30"> Choose your meals </p>
     </v-row>
@@ -21,7 +21,7 @@ import { computed, ref } from 'vue';
 import store from '../store'
 import { useRoute } from 'vue-router';
 import { onMounted } from 'vue';
-import Meals from '../components/Meals.vue';
+import MealsList from '../components/MealsList.vue';
 import RandomMeals from '../components/RandomMeals.vue';
 
 const keyword = ref("")

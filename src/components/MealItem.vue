@@ -14,7 +14,7 @@
 
                     </v-card-item>
                     <v-card-actions class="mt-3">
-                        <a :href="meal.strYoutube" :target="_blank">
+                        <a :href="meal.strYoutube" target="_blank">
                             <v-btn variant="outlined" class="ma-3">
                                 YouTube
                             </v-btn>
