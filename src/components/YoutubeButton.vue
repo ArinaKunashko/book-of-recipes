@@ -1,6 +1,6 @@
 <template>
-    <a :href="href" target="_blank">
-        <v-btn variant="outlined">
+    <a :href='href' target='_blank'>
+        <v-btn variant='outlined'>
             YouTube
         </v-btn>
     </a>
@@ -8,12 +8,11 @@
 
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps } from 'vue'
 
 const props = defineProps(() => {
-    href: String
+    String
 })
-
 </script>
 
 <style scoped></style>

@@ -1,28 +1,26 @@
 <template>
-    <p class="text-h6 text-md-h5 text-lg-h4 d-flex flex-wrap justify-center ma-30">My Favorites Recipe</p>
-    <v-row class="d-flex flex-row align-center justify-center ma-10" v-if="meals.length" align="start" no-gutters>
-        <MealsList :meals="meals" />
+    <p class='text-h6 text-md-h5 text-lg-h4 d-flex flex-wrap justify-center ma-30'>My Favorites Recipe</p>
+    <v-row v-if='meals.length' class='d-flex flex-row align-center justify-center ma-10' align='start' no-gutters>
+        <MealsList :meals='meals' />
     </v-row>
     
-    <v-row class="d-flex flex-row align-center justify-center ma-10" v-if="!meals.length" align="start" no-gutters>
-        <p class="text-h7 text-md-h6 text-lg-h5 d-flex flex-wrap justify-center ma-30"> Add Your Favorites Recipe, We
+    <v-row v-if='!meals.length' class='d-flex flex-row align-center justify-center ma-10' align='start' no-gutters>
+        <p class='text-h7 text-md-h6 text-lg-h5 d-flex flex-wrap justify-center ma-30'> Add Your Favorites Recipe, We
             Reccomend </p>
-        <RandomMeals :meals="meals" />
+        <RandomMeals :meals='meals' />
     </v-row>
 </template>
 
-
 <script setup>
-import { computed, onMounted, ref } from "vue";
-import store from "../store";
-import MealsList from "../components/MealsList.vue";
-import RandomMeals from '../components/RandomMeals.vue';
+import { computed, onMounted } from 'vue'
+import store from '../store'
+import MealsList from '../components/MealsList.vue'
+import RandomMeals from '../components/RandomMeals.vue'
 
-const meals = computed(() => store.state.favoriteMeals);
+const meals = computed(() => store.state.favoriteMeals)
 
 onMounted(() => {
-    store.dispatch("searchFavoritesMeals")
+    store.dispatch('searchFavoritesMeals')
 })
-
 
 </script>

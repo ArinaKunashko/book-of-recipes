@@ -1,5 +1,5 @@
-import axiosClient from '../axiosClient';
-import { useStorage } from '@vueuse/core';
+import axiosClient from '../axiosClient'
+import { useStorage } from '@vueuse/core'
 
 
 export function searchMeals({ commit }, keyword) {
@@ -46,7 +46,7 @@ function getRandomMelas() {
   var mData9 = axiosClient.get(`random.php`)
   var mData10 = axiosClient.get(`random.php`)
 
-  return Promise.all([mData1, mData2, mData3, mData4, mData5, mData6, mData7, mData8, mData9, mData10]);
+  return Promise.all([mData1, mData2, mData3, mData4, mData5, mData6, mData7, mData8, mData9, mData10])
 }
 
 
@@ -64,7 +64,7 @@ function getFavoritesMeals(ids) {
     const axiosResponse = axiosClient.get(`lookup.php?i=${mealId}`)
     favorites.push(axiosResponse)
   }
-  return Promise.all(favorites);
+  return Promise.all(favorites)
 }
 
 
